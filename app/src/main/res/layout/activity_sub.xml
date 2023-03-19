@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-    <EditText
-        android:id="@+id/et_input"
+    tools:context=".SubActivity">
+
+    <TextView
+        android:id="@+id/tv_sub"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Text"/>
+        android:hint="HERE"/>
     <Button
-        android:id="@+id/btn_intent"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="앞으로"/>
+        android:text="뒤로가기"/>
 </LinearLayout>
