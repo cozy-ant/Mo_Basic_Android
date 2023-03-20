@@ -1,36 +1,49 @@
 package com.example.basiccoding;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button btn_intent;
-    private EditText et_input;
-    private String str;
+    private DrawerLayout drawerLayout;
+    private View drawerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_input = findViewById(R.id.et_input);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerView = (View) findViewById(R.id.drawer);
 
+        Button btn_open = (Button) findViewById(R.id.btn_open);
+        Button btn_close = (Button) findViewById(R.id.btn_close);
 
-        btn_intent = findViewById(R.id.btn_intent);
-        btn_intent.setOnClickListener(new View.OnClickListener() {
+        btn_open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                str = et_input.getText().toString();
-                intent.putExtra("str", str);
-                startActivity(intent);
+                drawerLayout.openDrawer(drawerView);
+            }
+        });
+        btn_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawers();
+            }
+        });
+        drawerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
             }
         });
     }
+
 }

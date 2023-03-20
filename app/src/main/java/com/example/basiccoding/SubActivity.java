@@ -18,8 +18,8 @@ public class SubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
-        tv_text = findViewById(R.id.tv_sub);
-        btn_back = findViewById(R.id.btn_back);
+        tv_text = (TextView)findViewById(R.id.tv_sub);
+        btn_back = (Button)findViewById(R.id.btn_back);
 
         Intent intent = getIntent();
         String str = intent.getStringExtra("str");
