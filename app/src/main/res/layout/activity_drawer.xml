@@ -9,9 +9,10 @@
     >
 
     <Button
+        android:id="@+id/btn_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NONE" />
+        android:text="CAMERA" />
 
     <Button
         android:layout_width="match_parent"
